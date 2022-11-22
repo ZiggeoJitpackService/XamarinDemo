@@ -82,7 +82,7 @@ jobs:
         id: android_keystore
         uses: timheuer/base64-to-file@v1.0.3
         with:
-          fileName: /Users/runner/work/XamarinDemo/XamarinDemo/Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
+          fileName: z_release_keystore.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
       # - name: Setup Android signing 
@@ -100,7 +100,7 @@ jobs:
 
 
       - name: Create and Sign the APK
-        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
+        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
 
 
       - name: Publish APK test
