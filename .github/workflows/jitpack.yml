@@ -86,7 +86,7 @@ jobs:
       #     encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
       - name: Setup Android signing 
-        run: (echo ${{ secrets.ANDROID_KEYSTORE_BASE64 }} | base64 — decode) > ./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
+        run: (echo ${{ secrets.ANDROID_KEYSTORE_BASE64 }} | base64 — decode) > Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
 
       # - name: Create key.properties
       #   run: |
