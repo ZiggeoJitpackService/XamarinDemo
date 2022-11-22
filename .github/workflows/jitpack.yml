@@ -85,15 +85,19 @@ jobs:
           fileName: z_release_keystore.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
-      - name: Create key.properties
-        run: |
-          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
-          echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
-          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
+      # - name: Create key.properties
+      #   run: |
+      #     echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+      #     echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+      #     echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
+      #     echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
 
       - name: Build Solution
         run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
+
+      - name: Create and Sign the APK
+        run: msbuild Ziggeo.Xamarin.NetStandard.Demo.Android\Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:OutputPath=bin\Release\
+
 
       - name: Publish APK test
         uses: r0adkll/upload-google-play@v1
