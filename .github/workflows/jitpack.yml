@@ -92,8 +92,8 @@ jobs:
           keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
           signing_key_password: ${{ secrets.ANDROID_KEY_PASSWORD }}
-          mono_version: 6.12.0
-          xamarin_android_version: 12.0.0.3
+          mono_version: "6.12.0"
+          xamarin_android_version: "12.0.0.3"
 
       # - name: Build Solution
       #   run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
