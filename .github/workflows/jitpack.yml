@@ -78,15 +78,15 @@ jobs:
       #     DATA: ${{ secrets.PLAY_CONFIG_JSON }}
       #   run: echo $DATA > /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android/android/app/google-services.json
 
-      - name: Download Android keystore
-        id: android_keystore
-        uses: timheuer/base64-to-file@v1.0.3
-        with:
-          fileName: ./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
-          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      # - name: Download Android keystore
+      #   id: android_keystore
+      #   uses: timheuer/base64-to-file@v1.0.3
+      #   with:
+      #     fileName: ./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
+      #     encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
-      # - name: Setup Android signing 
-        # run: (echo ${{ secrets.ANDROID_KEYSTORE_BASE64 }} | base64 — decode) > ./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
+      - name: Setup Android signing 
+        run: (echo ${{ secrets.ANDROID_KEYSTORE_BASE64 }} | base64 — decode) > ./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
 
       # - name: Create key.properties
       #   run: |
