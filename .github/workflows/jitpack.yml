@@ -82,7 +82,7 @@ jobs:
         id: android_keystore
         uses: timheuer/base64-to-file@v1.0.3
         with:
-          fileName: z_release_keystore.jks
+          fileName: /Users/runner/work/XamarinDemo/XamarinDemo/./Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
       - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
