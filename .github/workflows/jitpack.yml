@@ -85,22 +85,23 @@ jobs:
           fileName: z_release_keystore.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
-      # - name: Setup Android signing 
-        # run: (echo ${{ secrets.ANDROID_KEYSTORE_BASE64 }} | base64 — decode) > Ziggeo.Xamarin.NetStandard.Demo.Android/z_release_keystore.jks
+      - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
+        with:
+          csproj_path: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
+          signing_keystore: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          signing_key_password: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          configuration: "Release"
+          mono_version: "preview"
+          xamarin_android_version: "preview"
 
-      # - name: Create key.properties
-      #   run: |
-      #     echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-      #     echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
-      #     echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
-      #     echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
-
-      - name: Build Solution
-        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
+      # - name: Build Solution
+      #   run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
 
 
-      - name: Create and Sign the APK
-        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
+      # - name: Create and Sign the APK
+      #   run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
 
 
       - name: Publish APK test
