@@ -95,10 +95,12 @@ jobs:
       - name: Build Solution
         run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
 
-      - name: Create and Sign the APK
+      - name: cd Android folder
         run: |
-          cd Ziggeo.Xamarin.NetStandard.Demo.Android \
-          msbuild Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
+          cd Ziggeo.Xamarin.NetStandard.Demo.Android 
+
+      - name: Create and Sign the APK
+        run: msbuild Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
 
 
       - name: Publish APK test
