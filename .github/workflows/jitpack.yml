@@ -88,18 +88,29 @@ jobs:
       - name: Build Solution
         run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
 
-      - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
-        with:
-          csproj_path: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
-          signing_keystore: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
-          signing_key_password: ${{ secrets.ANDROID_KEY_PASSWORD }}
-          mono_version: "6.12.0"
-          xamarin_android_version: "12.0.0.3"
+      - task: XamarinAndroid@1
+        displayName: 'Build aab'
+        inputs:
+          projectFile: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
+          outputDirectory: 'bin\Release\'
+          configuration: 'Release'
+          clean: true
+          msbuildVersionOption: latest
+          msbuildArguments: ' /t:SignAndroidPackage /p:AndroidKeyStore="True" /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/z_release_keystore.jks /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEY_PASSWORD }}'
 
-      # - name: Create and Sign the APK
-        # run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
+
+      # - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
+      #   with:
+      #     csproj_path: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
+      #     signing_keystore: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      #     keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      #     signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
+      #     signing_key_password: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      #     mono_version: "6.12.0"
+      #     xamarin_android_version: "12.0.0.3"
+
+      - name: Create and Sign the APK
+        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
 
 
       - name: Publish APK test
@@ -107,7 +118,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.ziggeo.reactnativesdk.demo
-          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.apk
+          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.aab
           track: internal
           status: inProgress
           inAppUpdatePriority: 2
