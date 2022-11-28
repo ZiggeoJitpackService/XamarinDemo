@@ -110,7 +110,7 @@ jobs:
       #     xamarin_android_version: "12.0.0.3"
 
       - name: Create and Sign the APK
-        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/work/_temp/XamarinDemo/XamarinDemo/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
+        run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }} /p:AndroidSigningKeyStore=/Users/runner/_temp/z_release_keystore.jks /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:OutputPath=bin\Release\
 
 
       - name: Publish APK test
