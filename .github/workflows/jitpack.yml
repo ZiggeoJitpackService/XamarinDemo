@@ -71,13 +71,6 @@ jobs:
           cd Ziggeo.Xamarin.NetStandard.Demo.Android \
           nuget install
 
-      # - name: Create google services file
-      #   run: cat /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android/android/app/google-services.json | base64
-      # - name: Putting google services data
-      #   env:
-      #     DATA: ${{ secrets.PLAY_CONFIG_JSON }}
-      #   run: echo $DATA > /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android/android/app/google-services.json
-
       - name: Download Android keystore
         id: android_keystore
         uses: timheuer/base64-to-file@v1.0.3
@@ -87,17 +80,6 @@ jobs:
 
       - name: Build Solution
         run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
-
-      # - uses: XamarinAndroid@1
-      #   displayName: 'Build aab'
-      #   inputs:
-      #     projectFile: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
-      #     outputDirectory: 'bin\Release\'
-      #     configuration: 'Release'
-      #     clean: true
-      #     msbuildVersionOption: latest
-      #     msbuildArguments: ' /t:SignAndroidPackage /p:AndroidKeyStore="True" /p:AndroidSigningKeyStore=/Users/runner/work/XamarinDemo/z_release_keystore.jks /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }} /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEY_PASSWORD }}'
-
 
       - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
         with:
@@ -114,7 +96,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.Ziggeo_Xamarin_NetStandard_Demo
-          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.apk
+          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.aab
           track: internal
           status: inProgress
           inAppUpdatePriority: 2
