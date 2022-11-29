@@ -102,7 +102,7 @@ jobs:
       - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
         with:
           csproj_path: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
-            android_package_format = "aab"
+          android_package_format: "aab"
           signing_keystore: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
