@@ -24,34 +24,13 @@ jobs:
         run: dotnet restore
 
       - name: Install test dependencies
-        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.csproj
+        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/AndroidTestProject2/AndroidTestProject2.csproj
 
       - name: Nuget Instal
         run: |
           cd Ziggeo.Xamarin.NetStandard.Demo.Android \
           cd AndroidTestProject2 \
           nuget install
-
-      - name: Create google services file
-        run: cat /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android/android/app/google-services.json | base64
-      - name: Putting google services data
-        env:
-          DATA: ${{ secrets.PLAY_CONFIG_JSON }}
-        run: echo $DATA > /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android/android/app/google-services.json
-
-      - name: Download Android keystore
-        id: android_keystore
-        uses: timheuer/base64-to-file@v1.0.3
-        with:
-          fileName: z_release_keystore.jks
-          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-
-      - name: Create key.properties
-        run: |
-          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
-          echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
-          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
 
       - name: Build
         uses: reactivecircus/android-emulator-runner@v2
@@ -66,9 +45,9 @@ jobs:
             adb shell am instrument -w AndroidTestProject2.AndroidTestProject2/app.tests.TestInstrumentation
 
 
-
   publish_demo:
     runs-on: macos-latest
+    needs: run_tests
     steps:
       - uses: actions/checkout@v3
       - name: Set default Xamarin SDK versions
@@ -83,20 +62,13 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
 
-      # - name: Install test dependencies
-        # run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
+      - name: Install test dependencies
+        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
 
       - name: Nuget Instal
         run: |
           cd Ziggeo.Xamarin.NetStandard.Demo.Android \
           nuget install
-
-      - name: Create google services file
-        run: cat /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo/Ziggeo.Xamarin.NetStandard.Demo/android/app/google-services.json | base64
-      - name: Putting google services data
-        env:
-          DATA: ${{ secrets.PLAY_CONFIG_JSON }}
-        run: echo $DATA > /Users/runner/work/Ziggeo.Xamarin.NetStandard.Demo/Ziggeo.Xamarin.NetStandard.Demo/android/app/google-services.json
 
       - name: Download Android keystore
         id: android_keystore
@@ -105,26 +77,28 @@ jobs:
           fileName: z_release_keystore.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
-      - name: Create key.properties
-        run: |
-          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
-          echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
-          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
-
       - name: Build Solution
         run: msbuild ./Ziggeo.Xamarin.NetStandard.Demo.sln /restore /p:Configuration=Release
+
+      - uses: bradyjoslin/xamarinandroid-signedbuild-action@v1
+        with:
+          csproj_path: ./Ziggeo.Xamarin.NetStandard.Demo.Android/Ziggeo.Xamarin.NetStandard.Demo.Android.csproj
+          signing_keystore: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          keystore_password: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          signing_key_alias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          signing_key_password: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          mono_version: "6.12.0"
+          xamarin_android_version: "12.0.0.3"
 
       - name: Publish APK test
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-          packageName: com.ziggeo.xamarinsdk.demo
-          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.apk
+          packageName: com.Ziggeo_Xamarin_NetStandard_Demo
+          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.aab
           track: internal
           status: inProgress
           inAppUpdatePriority: 2
           userFraction: 0.33
-
     
     

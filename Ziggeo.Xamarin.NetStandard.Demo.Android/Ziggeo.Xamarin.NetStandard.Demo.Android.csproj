@@ -42,6 +42,7 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidLinkTool>r8</AndroidLinkTool>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs">
@@ -69,7 +70,7 @@
       <Version>4.8.0.1269</Version>
     </PackageReference>
     <PackageReference Include="Ziggeo.XamarinSDK.Netstandard">
-      <Version>1.3.11</Version>
+      <Version>1.3.12</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
