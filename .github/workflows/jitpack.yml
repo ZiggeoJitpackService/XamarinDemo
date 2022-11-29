@@ -119,7 +119,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.ziggeo.reactnativesdk.demo
-          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo-Signed.aab
+          releaseFiles: Ziggeo.Xamarin.NetStandard.Demo.Android/bin/Release/com.Ziggeo_Xamarin_NetStandard_Demo.aab
           track: internal
           status: inProgress
           inAppUpdatePriority: 2
