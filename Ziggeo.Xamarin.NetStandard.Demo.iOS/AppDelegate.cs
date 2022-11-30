@@ -27,7 +27,14 @@ namespace Ziggeo.Xamarin.NetStandard.Demo.iOS
             global::Xamarin.Forms.FormsMaterial.Init();
             CachedImageRenderer.Init();
             CachedImageRenderer.InitImageSourceHandler();
-            LoadApplication(new App(new ZiggeoApplication()));
+            
+            //todo ZVideoView need to be implemented in IOS
+            // var ziggeoPlayer = new ZVideoView(this);
+            // var playerView = ziggeoPlayer.ToView();
+
+            LoadApplication(new App(new ZiggeoApplication(), 
+                null, 
+                null));
 
             return base.FinishedLaunching(app, options);
         }

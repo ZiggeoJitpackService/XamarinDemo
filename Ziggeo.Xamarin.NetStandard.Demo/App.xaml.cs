@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Essentials;
+﻿using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Ziggeo.Xamarin.NetStandard.CustomViews;
@@ -31,8 +30,11 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
             InitializeComponent();
             EventLogger = new EventLogger();
             ZiggeoApplication = instance;
-            ZiggeoVideoView = ziggeoVideoView;
-            ZVideoView = zVideoView;
+            if (zVideoView != null)
+            {
+                ZVideoView = zVideoView;
+                ZiggeoVideoView = ziggeoVideoView;
+            }
             Page page = new AuthPage();
             if (IsLoggedIn())
             {
@@ -111,7 +113,7 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
         {
             CameraRecorderConfig config = new CameraRecorderConfig();
             config.PausedMode = false;
-            config.BlurMode = Preferences.Get(Constants.BlurMode, false); 
+            config.BlurMode = Preferences.Get(Constants.BlurMode, false);
             config.Error += exception => EventLogger.Add(AppResources.ev_rec_error, exception.ToString());
             config.Loaded += () => EventLogger.Add(AppResources.ev_rec_loaded);
             config.CanceledByUser += () => EventLogger.Add(AppResources.ev_rec_canceledByUser);
