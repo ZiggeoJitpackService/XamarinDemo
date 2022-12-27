@@ -75,6 +75,7 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
             _initFileSelectorConfig();
             _initScreenRecorderConfig();
             _initUploaderConfig();
+            _initQrScannerConfig();
         }
 
         private void _initPlayerConfig()
@@ -92,7 +93,17 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
             plConfig.Seek += (seekToMillis) =>
                 EventLogger.Add(AppResources.ev_pl_seek, seekToMillis.ToString());
             plConfig.ReadyToPlay += () => EventLogger.Add(AppResources.ev_pl_readyToPlay);
+            plConfig.PlayerStyle = new PlayerStyle();
             ZiggeoApplication.PlayerConfig = plConfig;
+        }
+        
+        private void _initQrScannerConfig()
+        {
+            var qrConfig = new QrScannerConfig
+            {
+                ShouldCloseAfterSuccessfulScan = true
+            };
+            ZiggeoApplication.QrScannerConfig = qrConfig;
         }
 
         private void _initFileSelectorConfig()
@@ -111,9 +122,10 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
 
         private void _initCameraRecorderConfig()
         {
-            CameraRecorderConfig config = new CameraRecorderConfig();
-            config.PausedMode = false;
-            config.BlurMode = Preferences.Get(Constants.BlurMode, false);
+            CameraRecorderConfig config = new CameraRecorderConfig
+            {
+                PausedMode = false
+            };
             config.Error += exception => EventLogger.Add(AppResources.ev_rec_error, exception.ToString());
             config.Loaded += () => EventLogger.Add(AppResources.ev_rec_loaded);
             config.CanceledByUser += () => EventLogger.Add(AppResources.ev_rec_canceledByUser);
@@ -135,6 +147,7 @@ namespace Ziggeo.Xamarin.NetStandard.Demo
             config.ManuallySubmitted += () => EventLogger.Add(AppResources.ev_rec_manuallySubmitted);
             config.Countdown += secondsLeft =>
                 EventLogger.Add(AppResources.ev_rec_countdown, secondsLeft.ToString());
+            config.StopRecordingConfirmationDialogConfig = new StopRecordingConfirmationDialogConfig();
             ZiggeoApplication.CameraRecorderConfig = config;
         }
 

@@ -143,8 +143,86 @@
   <data name="custom_camera_settings" xml:space="preserve">
     <value>Use Custom Camera Mode</value>
   </data>
+  <data name="lost_connection_action" xml:space="preserve">
+    <value>LostConnectionAction</value>
+  </data>
+  <data name="should_start_as_foreground" xml:space="preserve">
+    <value>ShouldStartAsForeground</value>
+  </data>
+  <data name="should_turn_off_uploader" xml:space="preserve">
+    <value>ShouldTurnOffUploader</value>
+  </data>
+  <data name="should_use_wifi_only" xml:space="preserve">
+    <value>ShouldUseWifiOnly</value>
+  </data>
+  <data name="should_close_after_successful_scan" xml:space="preserve">
+    <value>ShouldCloseAfterSuccessfulScan</value>
+  </data>
   <data name="custom_player_settings" xml:space="preserve">
     <value>Use Custom Player Mode</value>
+  </data>
+  <data name="is_muted" xml:space="preserve">
+    <value>IsMuted</value>
+  </data>
+  <data name="should_show_subtitles" xml:space="preserve">
+    <value>ShouldShowSubtitles</value>
+  </data>
+  <data name="controller_style" xml:space="preserve">
+    <value>ControllerStyle</value>
+  </data>
+  <data name="text_color" xml:space="preserve">
+    <value>TextColor</value>
+  </data>
+  <data name="tint_color" xml:space="preserve">
+    <value>TintColor</value>
+  </data>
+  <data name="buffered_color" xml:space="preserve">
+    <value>BufferedColor</value>
+  </data>
+  <data name="played_color" xml:space="preserve">
+    <value>PlayedColor</value>
+  </data>
+  <data name="unplayed_color" xml:space="preserve">
+    <value>UnplayedColor</value>
+  </data>
+  <data name="should_show_face_outline" xml:space="preserve">
+    <value>ShouldShowFaceOutline</value>
+  </data>
+  <data name="is_live_streaming" xml:space="preserve">
+    <value>IsLiveStreaming</value>
+  </data>
+  <data name="should_auto_start_recording" xml:space="preserve">
+    <value>ShouldAutoStartRecording</value>
+  </data>
+  <data name="start_delay" xml:space="preserve">
+    <value>StartDelay</value>
+  </data>
+  <data name="blur_mode" xml:space="preserve">
+    <value>BlurMode</value>
+  </data>
+  <data name="paused_mode" xml:space="preserve">
+    <value>PausedMode</value>
+  </data>
+  <data name="should_send_immediately" xml:space="preserve">
+    <value>ShouldSendImmediately</value>
+  </data>
+  <data name="should_disable_camera_switch" xml:space="preserve">
+    <value>ShouldDisableCameraSwitch</value>
+  </data>
+  <data name="video_quality" xml:space="preserve">
+    <value>VideoQuality</value>
+  </data>
+  <data name="facing" xml:space="preserve">
+    <value>Facing</value>
+  </data>
+  <data name="max_duration" xml:space="preserve">
+    <value>MaxDuration</value>
+  </data>
+  <data name="should_enable_cover_shot" xml:space="preserve">
+    <value>ShouldEnableCoverShot</value>
+  </data>
+  <data name="should_confirm_stop_recording" xml:space="preserve">
+    <value>ShouldConfirmStopRecording</value>
   </data>
   <data name="save_settings" xml:space="preserve">
     <value>Save</value>

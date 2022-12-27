@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Ziggeo.Xamarin.NetStandard.Demo.Views.Settings.MainSettingsPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:views="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.Views;assembly=Ziggeo.Xamarin.NetStandard.Demo"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:resources="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo;"
+            xmlns:settings="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.Views.Settings;assembly=Ziggeo.Xamarin.NetStandard.Demo"
+            Title="{x:Static resources:AppResources.settings_header}">
+
+    <NavigationPage Title="Common Settings"
+                    HasNavigationBar="True">
+        <x:Arguments>
+            <views:SettingsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Player Settings"
+                    HasNavigationBar="False">
+        <x:Arguments>
+            <settings:PlayerSettingsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Recorder Settings"
+                    HasNavigationBar="False">
+        <x:Arguments>
+            <settings:RecorderSettingsPage/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

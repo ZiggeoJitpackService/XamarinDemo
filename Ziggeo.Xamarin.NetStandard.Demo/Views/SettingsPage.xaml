@@ -3,8 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ziggeo.Xamarin.NetStandard.Demo.Views.SettingsPage"
              xmlns:resources="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo;"
-             xmlns:viewModels="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.ViewModels;assembly=Ziggeo.Xamarin.NetStandard.Demo"
-             Title="{x:Static resources:AppResources.settings_header}">
+             xmlns:viewModels="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.ViewModels;assembly=Ziggeo.Xamarin.NetStandard.Demo">
 
     <ContentPage.BindingContext>
         <viewModels:SettingsViewModel />
@@ -13,23 +12,6 @@
     <StackLayout
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand">
-        <StackLayout
-            HorizontalOptions="FillAndExpand"
-            Orientation="Horizontal">
-            <Label
-                Margin="{StaticResource DefaultPadding}"
-                Text="{x:Static resources:AppResources.blur_settings}" />
-
-            <StackLayout
-                VerticalOptions="Center"
-                HorizontalOptions="EndAndExpand">
-                <Switch
-                    IsEnabled="True"
-                    IsToggled="{Binding IsBlurMode}"
-                    Toggled="OnBlurModeToggled"
-                />
-            </StackLayout>
-        </StackLayout>
         <StackLayout
             HorizontalOptions="FillAndExpand"
             Orientation="Horizontal">
@@ -64,6 +46,81 @@
                 />
             </StackLayout>
         </StackLayout>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Label
+                Margin="{StaticResource DefaultPadding}"
+                Text="{x:Static resources:AppResources.should_start_as_foreground}" />
+
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand">
+                <Switch
+                    IsEnabled="True"
+                    IsToggled="{Binding ShouldStartAsForeground}"
+                    Toggled="OnShouldStartAsForegroundToggled"
+                />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Label
+                Margin="{StaticResource DefaultPadding}"
+                Text="{x:Static resources:AppResources.should_turn_off_uploader}" />
+
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand">
+                <Switch
+                    IsEnabled="True"
+                    IsToggled="{Binding ShouldTurnOffUploader}"
+                    Toggled="OnShouldTurnOffUploaderToggled"
+                />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Label
+                Margin="{StaticResource DefaultPadding}"
+                Text="{x:Static resources:AppResources.should_use_wifi_only}" />
+
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand">
+                <Switch
+                    IsEnabled="True"
+                    IsToggled="{Binding ShouldUseWifiOnly}"
+                    Toggled="OnShouldUseWifiOnlyToggled"
+                />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Label
+                Margin="{StaticResource DefaultPadding}"
+                Text="{x:Static resources:AppResources.should_close_after_successful_scan}" />
+        
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand">
+                <Switch
+                    IsEnabled="True"
+                    IsToggled="{Binding ShouldCloseAfterSuccessfulScan}"
+                    Toggled="OnShouldCloseAfterSuccessfulScanToggled"
+                />
+            </StackLayout>
+        </StackLayout>
+        <Picker x:Name="LostConnectionActionList"
+                Margin="16,0"
+                Title="{x:Static resources:AppResources.lost_connection_action}"
+                ItemsSource="{Binding LostConnectionActionList}"
+                ItemDisplayBinding="{Binding Name}" 
+                SelectedIndexChanged =  "OnLostConnectionActionSelectedIndexChanged">
+        </Picker>
         <Button
             VerticalOptions="EndAndExpand"
             HorizontalOptions="Center"

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo;"
+             xmlns:viewModels="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.ViewModels;assembly=Ziggeo.Xamarin.NetStandard.Demo"
+             x:Class="Ziggeo.Xamarin.NetStandard.Demo.Views.Settings.PlayerSettingsPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:PlayerSettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.is_muted}" />
+
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding IsMuted}"
+                            Toggled="OnIsMutedToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_show_subtitles}" />
+
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldShowSubtitles}"
+                            Toggled="OnShouldShowSubtitlesToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <Picker x:Name="ControllerStyle"
+                        Margin="16,0"
+                        Title="{x:Static resources:AppResources.controller_style}"
+                        ItemsSource="{Binding StylesList}"
+                        ItemDisplayBinding="{Binding Name}" 
+                        SelectedIndexChanged =  "OnPickerSelectedIndexChanged">
+                </Picker>
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="TextColor"
+                    Placeholder="{x:Static resources:AppResources.text_color}"
+                    ReturnType="Done"
+                    Text="{Binding TextColor}" />
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="TintColor"
+                    Placeholder="{x:Static resources:AppResources.tint_color}"
+                    ReturnType="Done"
+                    Text="{Binding TintColor}" />
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="BufferedColor"
+                    Placeholder="{x:Static resources:AppResources.buffered_color}"
+                    ReturnType="Done"
+                    Text="{Binding BufferedColor}" />
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="PlayedColor"
+                    Placeholder="{x:Static resources:AppResources.played_color}"
+                    ReturnType="Done"
+                    Text="{Binding PlayedColor}" />
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="UnplayedColor"
+                    Placeholder="{x:Static resources:AppResources.unplayed_color}"
+                    ReturnType="Done"
+                    Text="{Binding UnplayedColor}" />
+            </StackLayout>
+        </ScrollView>
+        <Button
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center"
+            FontSize="12"
+            Margin="{StaticResource DefaultPadding}"
+            Clicked="SaveSettings"
+            Text="{x:Static resources:AppResources.save_settings}" />
+    </StackLayout>
+</ContentPage>

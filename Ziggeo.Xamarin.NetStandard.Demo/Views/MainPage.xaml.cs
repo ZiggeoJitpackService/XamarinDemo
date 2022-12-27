@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Ziggeo.Xamarin.NetStandard.Demo.Models;
 using Ziggeo.Xamarin.NetStandard.Demo.Utils;
 using Ziggeo.Xamarin.NetStandard.Demo.ViewModels;
+using Ziggeo.Xamarin.NetStandard.Demo.Views.Settings;
 
 namespace Ziggeo.Xamarin.NetStandard.Demo.Views
 {
@@ -17,7 +18,7 @@ namespace Ziggeo.Xamarin.NetStandard.Demo.Views
             MenuList = new List<MasterPageItem>();
             var recPage = new MasterPageItem
                 {Title = AppResources.item_recordings, TargetType = typeof(RecordingsListPage)};
-            var setPage = new MasterPageItem {Title = AppResources.item_settings, TargetType = typeof(SettingsPage)};
+            var setPage = new MasterPageItem {Title = AppResources.item_settings, TargetType = typeof(MainSettingsPage)};
             var sdkPage = new MasterPageItem
                 {Title = AppResources.item_sdks, TargetType = typeof(AvailableSdksListPage)};
             var clPage = new MasterPageItem

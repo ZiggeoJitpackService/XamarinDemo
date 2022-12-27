@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo.ViewModels;assembly=Ziggeo.Xamarin.NetStandard.Demo"
+             xmlns:resources="clr-namespace:Ziggeo.Xamarin.NetStandard.Demo;assembly=Ziggeo.Xamarin.NetStandard.Demo"
+             x:Class="Ziggeo.Xamarin.NetStandard.Demo.Views.Settings.RecorderSettingsPage">
+    
+    <ContentPage.BindingContext>
+        <viewModels:RecorderSettingsViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_show_face_outline}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldShowFaceOutline}"
+                            Toggled="OnShouldShowFaceOutlineToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.is_live_streaming}" />
+
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding IsLiveStreaming}"
+                            Toggled="OnIsLiveStreamingToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_auto_start_recording}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldAutoStartRecording}"
+                            Toggled="OnShouldAutoStartRecordingToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="StartDelay"
+                    Placeholder="{x:Static resources:AppResources.start_delay}"
+                    ReturnType="Done"
+                    Text="{Binding StartDelay}" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.blur_mode}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding BlurMode}"
+                            Toggled="OnBlurModeToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.paused_mode}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding PausedMode}"
+                            Toggled="OnPausedModeToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_send_immediately}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldSendImmediately}"
+                            Toggled="OnShouldSendImmediatelyToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_disable_camera_switch}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldDisableCameraSwitch}"
+                            Toggled="OnShouldDisableCameraSwitchToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <Picker x:Name="VideoQuality"
+                        Margin="16,0"
+                        Title="{x:Static resources:AppResources.video_quality}"
+                        ItemsSource="{Binding Quality}"
+                        ItemDisplayBinding="{Binding Name}" 
+                        SelectedIndexChanged =  "OnQualitySelectedIndexChanged">
+                </Picker>
+                <Picker x:Name="Facing"
+                        Margin="16,0"
+                        Title="{x:Static resources:AppResources.facing}"
+                        ItemsSource="{Binding CameraFacing}"
+                        ItemDisplayBinding="{Binding Name}" 
+                        SelectedIndexChanged =  "OnFacingSelectedIndexChanged">
+                </Picker>
+                <Entry
+                    Margin="16,8"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    x:Name="MaxDuration"
+                    Placeholder="{x:Static resources:AppResources.max_duration}"
+                    ReturnType="Done"
+                    Text="{Binding MaxDuration}" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_enable_cover_shot}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldEnableCoverShot}"
+                            Toggled="OnShouldEnableCoverShotToggled" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="{StaticResource DefaultPadding}"
+                        Text="{x:Static resources:AppResources.should_confirm_stop_recording}" />
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand">
+                        <Switch
+                            IsEnabled="True"
+                            IsToggled="{Binding ShouldConfirmStopRecording}"
+                            Toggled="OnShouldConfirmStopRecordingToggled" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Button
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center"
+            FontSize="12"
+            Margin="{StaticResource DefaultPadding}"
+            Clicked="SaveSettings"
+            Text="{x:Static resources:AppResources.save_settings}" />
+    </StackLayout>
+</ContentPage>

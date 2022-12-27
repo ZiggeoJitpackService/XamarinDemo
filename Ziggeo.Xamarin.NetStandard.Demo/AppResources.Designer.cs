@@ -87,9 +87,165 @@ namespace Ziggeo.Xamarin.NetStandard.Demo {
             }
         }
         
+        internal static string lost_connection_action {
+            get {
+                return ResourceManager.GetString("lost_connection_action", resourceCulture);
+            }
+        }
+        
+        internal static string should_start_as_foreground {
+            get {
+                return ResourceManager.GetString("should_start_as_foreground", resourceCulture);
+            }
+        }
+        
+        internal static string should_turn_off_uploader {
+            get {
+                return ResourceManager.GetString("should_turn_off_uploader", resourceCulture);
+            }
+        }
+        
+        internal static string should_use_wifi_only {
+            get {
+                return ResourceManager.GetString("should_use_wifi_only", resourceCulture);
+            }
+        }
+        
+        internal static string should_close_after_successful_scan {
+            get {
+                return ResourceManager.GetString("should_close_after_successful_scan", resourceCulture);
+            }
+        }
+        
         internal static string custom_player_settings {
             get {
                 return ResourceManager.GetString("custom_player_settings", resourceCulture);
+            }
+        }
+        
+        internal static string is_muted {
+            get {
+                return ResourceManager.GetString("is_muted", resourceCulture);
+            }
+        }
+        
+        internal static string should_show_subtitles {
+            get {
+                return ResourceManager.GetString("should_show_subtitles", resourceCulture);
+            }
+        }
+        
+        internal static string controller_style {
+            get {
+                return ResourceManager.GetString("controller_style", resourceCulture);
+            }
+        }
+        
+        internal static string text_color {
+            get {
+                return ResourceManager.GetString("text_color", resourceCulture);
+            }
+        }
+        
+        internal static string tint_color {
+            get {
+                return ResourceManager.GetString("tint_color", resourceCulture);
+            }
+        }
+        
+        internal static string buffered_color {
+            get {
+                return ResourceManager.GetString("buffered_color", resourceCulture);
+            }
+        }
+        
+        internal static string played_color {
+            get {
+                return ResourceManager.GetString("played_color", resourceCulture);
+            }
+        }
+        
+        internal static string unplayed_color {
+            get {
+                return ResourceManager.GetString("unplayed_color", resourceCulture);
+            }
+        }
+        
+        internal static string should_show_face_outline {
+            get {
+                return ResourceManager.GetString("should_show_face_outline", resourceCulture);
+            }
+        }
+        
+        internal static string is_live_streaming {
+            get {
+                return ResourceManager.GetString("is_live_streaming", resourceCulture);
+            }
+        }
+        
+        internal static string should_auto_start_recording {
+            get {
+                return ResourceManager.GetString("should_auto_start_recording", resourceCulture);
+            }
+        }
+        
+        internal static string start_delay {
+            get {
+                return ResourceManager.GetString("start_delay", resourceCulture);
+            }
+        }
+        
+        internal static string blur_mode {
+            get {
+                return ResourceManager.GetString("blur_mode", resourceCulture);
+            }
+        }
+        
+        internal static string paused_mode {
+            get {
+                return ResourceManager.GetString("paused_mode", resourceCulture);
+            }
+        }
+        
+        internal static string should_send_immediately {
+            get {
+                return ResourceManager.GetString("should_send_immediately", resourceCulture);
+            }
+        }
+        
+        internal static string should_disable_camera_switch {
+            get {
+                return ResourceManager.GetString("should_disable_camera_switch", resourceCulture);
+            }
+        }
+        
+        internal static string video_quality {
+            get {
+                return ResourceManager.GetString("video_quality", resourceCulture);
+            }
+        }
+        
+        internal static string facing {
+            get {
+                return ResourceManager.GetString("facing", resourceCulture);
+            }
+        }
+        
+        internal static string max_duration {
+            get {
+                return ResourceManager.GetString("max_duration", resourceCulture);
+            }
+        }
+        
+        internal static string should_enable_cover_shot {
+            get {
+                return ResourceManager.GetString("should_enable_cover_shot", resourceCulture);
+            }
+        }
+        
+        internal static string should_confirm_stop_recording {
+            get {
+                return ResourceManager.GetString("should_confirm_stop_recording", resourceCulture);
             }
         }
         
