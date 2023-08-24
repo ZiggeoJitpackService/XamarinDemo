@@ -18266,292 +18266,298 @@ namespace Ziggeo.Xamarin.NetStandard.Demo.Droid
 			public const int common_signin_button_text_long = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int confirm_stop_message = 2131623993;
+			public const int confirm_back_stop_message = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int default_notification_message = 2131623994;
+			public const int confirm_stop_btn_message = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int delete = 2131623995;
+			public const int confirm_stop_message = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int email_chooser_title = 2131623996;
-			
-			// aapt resource value: 0x7F0E003E
-			public const int error_occurred = 2131623998;
+			public const int default_notification_message = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int err_permission_denied_screen_cast = 2131623997;
+			public const int delete = 2131623997;
 			
-			// aapt resource value: 0x7F0E003F
-			public const int exo_controls_fastforward_description = 2131623999;
+			// aapt resource value: 0x7F0E003E
+			public const int email_chooser_title = 2131623998;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int exo_controls_fullscreen_description = 2131624000;
+			public const int error_occurred = 2131624000;
+			
+			// aapt resource value: 0x7F0E003F
+			public const int err_permission_denied_screen_cast = 2131623999;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int exo_controls_hide = 2131624001;
+			public const int exo_controls_fastforward_description = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int exo_controls_next_description = 2131624002;
+			public const int exo_controls_fullscreen_description = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int exo_controls_pause_description = 2131624003;
+			public const int exo_controls_hide = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int exo_controls_play_description = 2131624004;
+			public const int exo_controls_next_description = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int exo_controls_previous_description = 2131624005;
+			public const int exo_controls_pause_description = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int exo_controls_repeat_all_description = 2131624006;
+			public const int exo_controls_play_description = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int exo_controls_repeat_off_description = 2131624007;
+			public const int exo_controls_previous_description = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int exo_controls_repeat_one_description = 2131624008;
+			public const int exo_controls_repeat_all_description = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int exo_controls_rewind_description = 2131624009;
+			public const int exo_controls_repeat_off_description = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int exo_controls_show = 2131624010;
+			public const int exo_controls_repeat_one_description = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int exo_controls_shuffle_off_description = 2131624011;
+			public const int exo_controls_rewind_description = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int exo_controls_shuffle_on_description = 2131624012;
+			public const int exo_controls_show = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int exo_controls_stop_description = 2131624013;
+			public const int exo_controls_shuffle_off_description = 2131624013;
 			
 			// aapt resource value: 0x7F0E004E
-			public const int exo_controls_vr_description = 2131624014;
+			public const int exo_controls_shuffle_on_description = 2131624014;
 			
 			// aapt resource value: 0x7F0E004F
-			public const int exo_download_completed = 2131624015;
+			public const int exo_controls_stop_description = 2131624015;
 			
 			// aapt resource value: 0x7F0E0050
-			public const int exo_download_description = 2131624016;
+			public const int exo_controls_vr_description = 2131624016;
 			
 			// aapt resource value: 0x7F0E0051
-			public const int exo_download_downloading = 2131624017;
+			public const int exo_download_completed = 2131624017;
 			
 			// aapt resource value: 0x7F0E0052
-			public const int exo_download_failed = 2131624018;
+			public const int exo_download_description = 2131624018;
 			
 			// aapt resource value: 0x7F0E0053
-			public const int exo_download_notification_channel_name = 2131624019;
+			public const int exo_download_downloading = 2131624019;
 			
 			// aapt resource value: 0x7F0E0054
-			public const int exo_download_removing = 2131624020;
+			public const int exo_download_failed = 2131624020;
 			
 			// aapt resource value: 0x7F0E0055
-			public const int exo_item_list = 2131624021;
+			public const int exo_download_notification_channel_name = 2131624021;
 			
 			// aapt resource value: 0x7F0E0056
-			public const int exo_track_bitrate = 2131624022;
+			public const int exo_download_removing = 2131624022;
 			
 			// aapt resource value: 0x7F0E0057
-			public const int exo_track_mono = 2131624023;
+			public const int exo_item_list = 2131624023;
 			
 			// aapt resource value: 0x7F0E0058
-			public const int exo_track_resolution = 2131624024;
+			public const int exo_track_bitrate = 2131624024;
 			
 			// aapt resource value: 0x7F0E0059
-			public const int exo_track_role_alternate = 2131624025;
+			public const int exo_track_mono = 2131624025;
 			
 			// aapt resource value: 0x7F0E005A
-			public const int exo_track_role_closed_captions = 2131624026;
+			public const int exo_track_resolution = 2131624026;
 			
 			// aapt resource value: 0x7F0E005B
-			public const int exo_track_role_commentary = 2131624027;
+			public const int exo_track_role_alternate = 2131624027;
 			
 			// aapt resource value: 0x7F0E005C
-			public const int exo_track_role_supplementary = 2131624028;
+			public const int exo_track_role_closed_captions = 2131624028;
 			
 			// aapt resource value: 0x7F0E005D
-			public const int exo_track_selection_auto = 2131624029;
+			public const int exo_track_role_commentary = 2131624029;
 			
 			// aapt resource value: 0x7F0E005E
-			public const int exo_track_selection_none = 2131624030;
+			public const int exo_track_role_supplementary = 2131624030;
 			
 			// aapt resource value: 0x7F0E005F
-			public const int exo_track_selection_title_audio = 2131624031;
+			public const int exo_track_selection_auto = 2131624031;
 			
 			// aapt resource value: 0x7F0E0060
-			public const int exo_track_selection_title_text = 2131624032;
+			public const int exo_track_selection_none = 2131624032;
 			
 			// aapt resource value: 0x7F0E0061
-			public const int exo_track_selection_title_video = 2131624033;
+			public const int exo_track_selection_title_audio = 2131624033;
 			
 			// aapt resource value: 0x7F0E0062
-			public const int exo_track_stereo = 2131624034;
+			public const int exo_track_selection_title_text = 2131624034;
 			
 			// aapt resource value: 0x7F0E0063
-			public const int exo_track_surround = 2131624035;
+			public const int exo_track_selection_title_video = 2131624035;
 			
 			// aapt resource value: 0x7F0E0064
-			public const int exo_track_surround_5_point_1 = 2131624036;
+			public const int exo_track_stereo = 2131624036;
 			
 			// aapt resource value: 0x7F0E0065
-			public const int exo_track_surround_7_point_1 = 2131624037;
+			public const int exo_track_surround = 2131624037;
 			
 			// aapt resource value: 0x7F0E0066
-			public const int exo_track_unknown = 2131624038;
+			public const int exo_track_surround_5_point_1 = 2131624038;
 			
 			// aapt resource value: 0x7F0E0067
-			public const int fab_transformation_scrim_behavior = 2131624039;
+			public const int exo_track_surround_7_point_1 = 2131624039;
 			
 			// aapt resource value: 0x7F0E0068
-			public const int fab_transformation_sheet_behavior = 2131624040;
+			public const int exo_track_unknown = 2131624040;
 			
 			// aapt resource value: 0x7F0E0069
-			public const int fs_duration_exceeded = 2131624041;
-			
-			// aapt resource value: 0x7F0E006D
-			public const int fs_filters_title = 2131624045;
+			public const int fab_transformation_scrim_behavior = 2131624041;
 			
 			// aapt resource value: 0x7F0E006A
-			public const int fs_filter_date = 2131624042;
+			public const int fab_transformation_sheet_behavior = 2131624042;
 			
 			// aapt resource value: 0x7F0E006B
-			public const int fs_filter_name = 2131624043;
-			
-			// aapt resource value: 0x7F0E006C
-			public const int fs_filter_size = 2131624044;
-			
-			// aapt resource value: 0x7F0E006E
-			public const int fs_header = 2131624046;
+			public const int fs_duration_exceeded = 2131624043;
 			
 			// aapt resource value: 0x7F0E006F
-			public const int fs_modified_prefix = 2131624047;
+			public const int fs_filters_title = 2131624047;
+			
+			// aapt resource value: 0x7F0E006C
+			public const int fs_filter_date = 2131624044;
+			
+			// aapt resource value: 0x7F0E006D
+			public const int fs_filter_name = 2131624045;
+			
+			// aapt resource value: 0x7F0E006E
+			public const int fs_filter_size = 2131624046;
 			
 			// aapt resource value: 0x7F0E0070
-			public const int fs_nothing_selected_error_message = 2131624048;
+			public const int fs_header = 2131624048;
 			
 			// aapt resource value: 0x7F0E0071
-			public const int fs_rationale = 2131624049;
+			public const int fs_modified_prefix = 2131624049;
 			
 			// aapt resource value: 0x7F0E0072
-			public const int fs_size_prefix = 2131624050;
+			public const int fs_nothing_selected_error_message = 2131624050;
 			
 			// aapt resource value: 0x7F0E0073
-			public const int hide_bottom_view_on_scroll_behavior = 2131624051;
+			public const int fs_rationale = 2131624051;
 			
 			// aapt resource value: 0x7F0E0074
-			public const int image_error = 2131624052;
+			public const int fs_size_prefix = 2131624052;
 			
 			// aapt resource value: 0x7F0E0075
-			public const int image_permission_rationale = 2131624053;
+			public const int hide_bottom_view_on_scroll_behavior = 2131624053;
 			
 			// aapt resource value: 0x7F0E0076
-			public const int internal_storage = 2131624054;
+			public const int image_error = 2131624054;
 			
 			// aapt resource value: 0x7F0E0077
-			public const int library_name = 2131624055;
+			public const int image_permission_rationale = 2131624055;
 			
 			// aapt resource value: 0x7F0E0078
-			public const int list_empty = 2131624056;
+			public const int internal_storage = 2131624056;
 			
 			// aapt resource value: 0x7F0E0079
-			public const int mtrl_chip_close_icon_content_description = 2131624057;
+			public const int library_name = 2131624057;
 			
 			// aapt resource value: 0x7F0E007A
-			public const int notification_channel_screen_recorder = 2131624058;
+			public const int list_empty = 2131624058;
 			
 			// aapt resource value: 0x7F0E007B
-			public const int notification_channel_uploader = 2131624059;
+			public const int mtrl_chip_close_icon_content_description = 2131624059;
 			
 			// aapt resource value: 0x7F0E007C
-			public const int overflow_tab_title = 2131624060;
+			public const int notification_channel_screen_recorder = 2131624060;
 			
 			// aapt resource value: 0x7F0E007D
-			public const int password_toggle_content_description = 2131624061;
+			public const int notification_channel_uploader = 2131624061;
 			
 			// aapt resource value: 0x7F0E007E
-			public const int path_password_eye = 2131624062;
+			public const int overflow_tab_title = 2131624062;
 			
 			// aapt resource value: 0x7F0E007F
-			public const int path_password_eye_mask_strike_through = 2131624063;
+			public const int password_toggle_content_description = 2131624063;
 			
 			// aapt resource value: 0x7F0E0080
-			public const int path_password_eye_mask_visible = 2131624064;
+			public const int path_password_eye = 2131624064;
 			
 			// aapt resource value: 0x7F0E0081
-			public const int path_password_strike_through = 2131624065;
+			public const int path_password_eye_mask_strike_through = 2131624065;
 			
 			// aapt resource value: 0x7F0E0082
-			public const int player_error = 2131624066;
+			public const int path_password_eye_mask_visible = 2131624066;
 			
 			// aapt resource value: 0x7F0E0083
-			public const int player_permission_rationale = 2131624067;
+			public const int path_password_strike_through = 2131624067;
 			
 			// aapt resource value: 0x7F0E0084
-			public const int player_progress_stub = 2131624068;
+			public const int player_error = 2131624068;
 			
 			// aapt resource value: 0x7F0E0085
-			public const int preparing_for_upload = 2131624069;
+			public const int player_permission_rationale = 2131624069;
 			
 			// aapt resource value: 0x7F0E0086
-			public const int preparing_stream = 2131624070;
+			public const int player_progress_stub = 2131624070;
 			
 			// aapt resource value: 0x7F0E0087
-			public const int processed = 2131624071;
+			public const int preparing_for_upload = 2131624071;
 			
 			// aapt resource value: 0x7F0E0088
-			public const int processing = 2131624072;
+			public const int preparing_stream = 2131624072;
 			
 			// aapt resource value: 0x7F0E0089
-			public const int qr_permission_rationale = 2131624073;
+			public const int processed = 2131624073;
 			
 			// aapt resource value: 0x7F0E008A
-			public const int recording_name_prefix = 2131624074;
+			public const int processing = 2131624074;
 			
 			// aapt resource value: 0x7F0E008B
-			public const int retry = 2131624075;
+			public const int qr_permission_rationale = 2131624075;
 			
 			// aapt resource value: 0x7F0E008C
-			public const int screen_record_permission_rationale = 2131624076;
+			public const int recording_name_prefix = 2131624076;
 			
 			// aapt resource value: 0x7F0E008D
-			public const int search_menu_title = 2131624077;
+			public const int retry = 2131624077;
 			
 			// aapt resource value: 0x7F0E008E
-			public const int select_cover_shot_title = 2131624078;
+			public const int screen_record_permission_rationale = 2131624078;
 			
 			// aapt resource value: 0x7F0E008F
-			public const int settings = 2131624079;
+			public const int search_menu_title = 2131624079;
 			
 			// aapt resource value: 0x7F0E0090
-			public const int status_bar_notification_info_overflow = 2131624080;
+			public const int select_cover_shot_title = 2131624080;
 			
 			// aapt resource value: 0x7F0E0091
-			public const int text_divider = 2131624081;
+			public const int settings = 2131624081;
 			
 			// aapt resource value: 0x7F0E0092
-			public const int try_later = 2131624082;
+			public const int status_bar_notification_info_overflow = 2131624082;
 			
 			// aapt resource value: 0x7F0E0093
-			public const int uploading = 2131624083;
-			
-			// aapt resource value: 0x7F0E0097
-			public const int verifying = 2131624087;
+			public const int text_divider = 2131624083;
 			
 			// aapt resource value: 0x7F0E0094
-			public const int ve_btn_add_video = 2131624084;
+			public const int try_later = 2131624084;
 			
 			// aapt resource value: 0x7F0E0095
-			public const int ve_editor_permission_rationale = 2131624085;
+			public const int uploading = 2131624085;
+			
+			// aapt resource value: 0x7F0E0099
+			public const int verifying = 2131624089;
 			
 			// aapt resource value: 0x7F0E0096
-			public const int ve_progress_text = 2131624086;
+			public const int ve_btn_add_video = 2131624086;
+			
+			// aapt resource value: 0x7F0E0097
+			public const int ve_editor_permission_rationale = 2131624087;
 			
 			// aapt resource value: 0x7F0E0098
-			public const int view_with = 2131624088;
+			public const int ve_progress_text = 2131624088;
+			
+			// aapt resource value: 0x7F0E009A
+			public const int view_with = 2131624090;
 			
 			static String()
 			{
