@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>11.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Ziggeo.Xamarin.NetStandard.Demo</string>
 	<key>CFBundleIdentifier</key>
@@ -37,9 +37,14 @@
 	<key>NSCameraUsageInfo</key>
 	<string></string>
 	<key>NSCameraUsageDescription</key>
-	<string>Application will have access to camera</string>
+	<string>The application will have access to video recording</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Application will have access to microphone</string>
+	<string>The application will have access to audio recording</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The application will have access to choose video or image</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIAppFonts</key>
 	<array>
 		<string>materialdesignicons-webfont.ttf</string>
 	</array>
