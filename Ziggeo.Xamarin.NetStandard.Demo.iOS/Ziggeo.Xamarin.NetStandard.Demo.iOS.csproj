@@ -140,7 +140,9 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.8.0.1269" />
-    <PackageReference Include="Ziggeo.XamarinSDK.Netstandard" Version="1.3.13" />
+    <PackageReference Include="Ziggeo.XamarinSDK.Netstandard">
+      <Version>1.3.16</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -148,5 +150,15 @@
       <Project>{5C15E693-FA67-4954-8CAA-1F738FA67B7A}</Project>
       <Name>Ziggeo.Xamarin.NetStandard.Demo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Frameworks\GoogleInteractiveMediaAds.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="Frameworks\SelfieSegmentation.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
 </Project>
