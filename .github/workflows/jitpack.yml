@@ -21,7 +21,10 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Install dependencies
-        run: dotnet add package Ziggeo.XamarinSDK.Netstandard --version 1.3.14
+        run: |
+          cd Ziggeo.Xamarin.NetStandard.Demo.Android \
+          cd AndroidTestProject2 \
+          dotnet add package Ziggeo.XamarinSDK.Netstandard --version 1.3.14
 
       - name: Install test dependencies
         run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/AndroidTestProject2/AndroidTestProject2.csproj
