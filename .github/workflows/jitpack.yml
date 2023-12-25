@@ -24,7 +24,7 @@ jobs:
 #        run: dotnet restore
 
       - name: Install test dependencies
-        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/AndroidTestProject2/AndroidTestProject2.csproj
+        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo/AndroidTestProject2/AndroidTestProject2.csproj
 
       - name: Nuget Instal
         run: |
