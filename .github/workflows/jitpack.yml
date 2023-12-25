@@ -25,10 +25,7 @@ jobs:
           cd Ziggeo.Xamarin.NetStandard.Demo.Android \
           cd AndroidTestProject2 \
           dotnet add package Ziggeo.XamarinSDK.Netstandard --version 1.3.14
-
-      - name: Clean
-        run: dotnet clean ./JM.Formox.MicroService.sln --configuration Debug && dotnet nuget locals all --clear
-
+          
       - name: Add nuget.org as nuget package source
         run: dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
 
