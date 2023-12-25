@@ -20,12 +20,12 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-#      - name: Install dependencies
-#        run: |
-#          cd Ziggeo.Xamarin.NetStandard.Demo.Android \
-#          cd AndroidTestProject2 \
-#          dotnet add package Ziggeo.XamarinSDK.Netstandard --version 1.3.14
-#
+      - name: Install dependencies
+        run: |
+          cd Ziggeo.Xamarin.NetStandard.Demo.Android \
+          cd AndroidTestProject2 \
+          dotnet add package Ziggeo.XamarinSDK.Netstandard --version 1.3.14
+
 #      - name: Install test dependencies
 #        run: dotnet restore ./Ziggeo.Xamarin.NetStandard.Demo.Android/AndroidTestProject2/AndroidTestProject2.csproj
 
@@ -50,7 +50,7 @@ jobs:
 
   publish_demo:
     runs-on: macos-latest
-#    needs: run_tests
+    needs: run_tests
     steps:
       - uses: actions/checkout@v3
       - name: Set default Xamarin SDK versions
