@@ -10,6 +10,23 @@ As Xamarin has support for both iOS and Android platforms, so does our SDK. Whil
 
 Ziggeo supports and provides many other mobile SDKs such as ReactNative and Flutter. There are also platform specific SDKs for iOS (Objective C and Swift SDKs) and Android (Java & Kotlin).
 
+## iOS project Settings
+
+- Add below codes on Info.plist.
+```
+<key>NSCameraUsageDescription</key>
+<string>...</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>...</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>...</string>
+```
+![ios-plist.png](docs/images/ios-plist.png)
+
+- Add SelfieSegmentation.framework and GoogleInteractiveMediaAds.framework to Native References.
+![ios-frameworks.png](docs/images/ios-frameworks.png)
+![ios-native-reference.png](docs/images/ios-native-reference.png)
+
 ## How to build app
 
 First step would be to add your app token. For this you will need Ziggeo account, which you can get on overview page if you have the account. If you do not have account, header over [here](https://ziggeo.com/signup/) to create one with 30 days free trial.

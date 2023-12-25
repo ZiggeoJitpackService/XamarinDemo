@@ -18,6 +18,10 @@
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <LangVersion>8</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -28,7 +32,6 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <AndroidLinkMode>None</AndroidLinkMode>
-        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -39,7 +42,6 @@
         <WarningLevel>4</WarningLevel>
         <AndroidManagedSymbols>true</AndroidManagedSymbols>
         <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="ExoPlayer, Version=2.11.8.0, Culture=neutral, PublicKeyToken=null">
@@ -561,29 +563,24 @@
             <Private>True</Private>
         </Reference>
         <Reference Include="Ziggeo.Xamarin.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.12\lib\MonoAndroid\Ziggeo.Xamarin.Android.dll</HintPath>
+          <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.14\lib\MonoAndroid\Ziggeo.Xamarin.Android.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Ziggeo.Xamarin.Android.Binding, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.12\lib\MonoAndroid\Ziggeo.Xamarin.Android.Binding.dll</HintPath>
-            <Private>True</Private>
+          <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.14\lib\MonoAndroid\Ziggeo.Xamarin.Android.Binding.dll</HintPath>
+          <Private>True</Private>
         </Reference>
-        <Reference Include="Ziggeo.Xamarin.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.12\lib\MonoAndroid\Ziggeo.Xamarin.NetStandard.dll</HintPath>
-            <Private>True</Private>
+        <Reference Include="Ziggeo.Xamarin.NetStandard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\Ziggeo.XamarinSDK.Netstandard.1.3.14\lib\MonoAndroid\Ziggeo.Xamarin.NetStandard.dll</HintPath>
+          <Private>True</Private>
         </Reference>
-        <PackageReference Include="Ziggeo.XamarinSDK.Netstandard">
-            <Version>1.3.12</Version>
-        </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
         <Compile Include="TestsSample.cs" />
         <Compile Include="Resources\Resource.designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <PackageReference Include="Ziggeo.XamarinSDK.Netstandard">
-            <Version>1.3.12</Version>
-        </PackageReference>
+        
     </ItemGroup>
     <ItemGroup>
         <None Include="nuget.config" />
@@ -592,7 +589,7 @@
         <None Include="Assets\AboutAssets.txt" />
         <None Include="Properties\AndroidManifest.xml" />
         <PackageReference Include="Ziggeo.XamarinSDK.Netstandard">
-            <Version>1.3.13</Version>
+            <Version>1.3.14</Version>
         </PackageReference>
     </ItemGroup>
     <Import Project="/Library/Frameworks/Mono.framework/External/xbuild\Xamarin\Android\Xamarin.Android.CSharp.targets" />
@@ -703,4 +700,5 @@
     <Import Project="..\..\packages\Xamarin.AndroidX.Window.1.0.0.9\build\monoandroid12.0\Xamarin.AndroidX.Window.targets" Condition="Exists('..\..\packages\Xamarin.AndroidX.Window.1.0.0.9\build\monoandroid12.0\Xamarin.AndroidX.Window.targets')" />
     <Import Project="..\..\packages\Xamarin.AndroidX.SlidingPaneLayout.1.2.0.2\build\monoandroid12.0\Xamarin.AndroidX.SlidingPaneLayout.targets" Condition="Exists('..\..\packages\Xamarin.AndroidX.SlidingPaneLayout.1.2.0.2\build\monoandroid12.0\Xamarin.AndroidX.SlidingPaneLayout.targets')" />
     <Import Project="..\..\packages\Xamarin.AndroidX.Legacy.Support.Core.UI.1.0.0.15\build\monoandroid12.0\Xamarin.AndroidX.Legacy.Support.Core.UI.targets" Condition="Exists('..\..\packages\Xamarin.AndroidX.Legacy.Support.Core.UI.1.0.0.15\build\monoandroid12.0\Xamarin.AndroidX.Legacy.Support.Core.UI.targets')" />
+
 </Project>
